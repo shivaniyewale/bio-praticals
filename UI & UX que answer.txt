@@ -1,0 +1,308 @@
+Practical 1: Design User Persona
+Q1. What is a User Persona?
+
+A User Persona is a fictional representation of a target user based on their needs, goals, behaviour and problems.
+
+Q2. Why do we create a User Persona?
+
+To understand users and design a product according to their requirements.
+
+Q3. What is a target user?
+
+A target user is a person or group of people for whom we design a product.
+
+Q4. What is a fictional user?
+
+A fictional user is an imaginary person created to represent the characteristics of real users.
+
+Q5. What are the main elements of a User Persona?
+- Name and age
+- Occupation
+- Goals
+- Needs
+- Pain points
+- Behaviour
+- Motivation
+Q6. What are pain points?
+
+Pain points are the problems or difficulties faced by users while using a product.
+
+Q7. What are user goals?
+
+User goals are the things users want to achieve using a product.
+
+Q8. What is user behaviour?
+
+User behaviour describes how users interact with a product or application.
+
+Q9. How does a User Persona improve UI/UX design?
+
+It helps designers create a user-friendly interface according to user needs.
+
+Q10. Which tools are used to create a User Persona?
+
+Figma, Canva and Google Forms.
+
+Q11. Is a User Persona a real person?
+
+No. It is a fictional representation of a group of target users.
+
+Q12. What is user research?
+
+User research is the process of collecting information about users, their needs and expectations.
+
+Practical 2: Online Learning Platform – Wireframe Design
+Q13. What is a wireframe?
+
+A wireframe is a basic blueprint of a website or application that shows the layout and arrangement of elements.
+
+Q14. What is the purpose of a wireframe?
+
+To plan the structure and layout of an application before designing the final interface.
+
+Q15. What is a low-fidelity wireframe?
+
+A simple design that uses basic shapes, lines and text without detailed colours or graphics.
+
+Q16. What is a high-fidelity wireframe?
+
+A detailed representation of an interface that looks closer to the final design.
+
+Q17. Which tool is used to create wireframes?
+
+Figma, Adobe XD, Balsamiq and Sketch.
+
+Q18. What are the main features of an Online Learning Platform?
+- Course listings
+- Video lectures
+- Quizzes
+- Progress tracking
+Q19. What is course listing?
+
+Course listing displays the available courses from which users can select.
+
+Q20. What is progress tracking?
+
+Progress tracking monitors the completion of lessons, courses and activities.
+
+Q21. Why are quizzes used in an online learning platform?
+
+To test students' knowledge and understanding.
+
+Q22. What is navigation in UI design?
+
+Navigation helps users move from one screen or section to another.
+
+Q23. What is a dashboard?
+
+A dashboard is a screen that displays important information in one place.
+
+Q24. How can we improve an Online Learning Platform design?
+
+By adding simple navigation, search filters, progress bars, notifications and clear buttons.
+
+Practical 3: Social Fitness App – Wireframes and Prototype
+Q25. What is a Social Fitness App?
+
+A Social Fitness App helps users track workouts, set fitness goals, connect with friends and share progress.
+
+Q26. What is workout tracking?
+
+Workout tracking means recording physical activities, exercise duration, calories and other fitness information.
+
+Q27. What is goal setting?
+
+Goal setting allows users to define fitness targets such as daily steps or workout time.
+
+Q28. What is a fitness dashboard?
+
+It displays daily fitness information such as steps, calories burned and workout progress.
+
+Q29. What is a social feed?
+
+A social feed displays posts, activities and updates shared by users and their friends.
+
+Q30. What are social features?
+
+Social features allow users to connect, communicate, like posts and share activities.
+
+Q31. What is a prototype?
+
+A prototype is an interactive model of an application that demonstrates how the interface works.
+
+Q32. What is the difference between a wireframe and a prototype?
+
+A wireframe shows the basic layout, while a prototype demonstrates screen interactions and navigation.
+
+Q33. What is Figma Prototype mode?
+
+It is a feature in Figma used to connect screens and create interactive designs.
+
+Q34. What is Auto Layout in Figma?
+
+Auto Layout automatically arranges and spaces elements inside a frame or component.
+
+Q35. What is a progress bar?
+
+A progress bar visually represents the completion of a task or goal.
+
+Q36. How can we improve a Social Fitness App?
+
+By adding workout reminders, achievement badges, progress charts, friend requests and privacy settings.
+
+Practical 4: Product Packaging Mockup
+Q37. What is a mockup?
+
+A mockup is a realistic visual representation of a design showing how the final product will look.
+
+Q38. What is product packaging?
+
+Product packaging is the material and design used to protect, store and present a product.
+
+Q39. What is a Product Packaging Mockup?
+
+It is a realistic representation of product packaging before actual manufacturing.
+
+Q40. Why is product packaging important?
+- Protects the product.
+- Attracts customers.
+- Provides product information.
+- Builds brand identity.
+Q41. What are the main elements of packaging design?
+
+Logo, product name, colours, images, ingredients, weight and product information.
+
+Q42. What are the different sides of a packaging box?
+
+Front, back, left, right, top and bottom.
+
+Q43. What information is displayed on the front side?
+
+Brand name, product name, logo and product image.
+
+Q44. What information is displayed on the back side?
+
+Ingredients, usage instructions, manufacturer details and other product information.
+
+Q45. What is a dieline?
+
+A dieline is a flat template showing where packaging should be cut, folded and assembled.
+
+Q46. What is a 3D packaging mockup?
+
+It is a three-dimensional representation of packaging that shows different sides and angles.
+
+Q47. What is brand identity?
+
+Brand identity is the visual representation of a brand through its logo, colours, fonts and design.
+
+Q48. Which tools are used for packaging mockups?
+
+Pacdora, Canva, Adobe Photoshop and Adobe Illustrator.
+
+Q49. Why are colours important in packaging?
+
+Colours attract customers and communicate the product's identity.
+
+Practical 5: Poster or Flyer Mockup
+Q50. What is a poster?
+
+A poster is a visual design used to promote an event, product, service or campaign.
+
+Q51. What is a flyer?
+
+A flyer is a small printed or digital promotional document containing important information.
+
+Q52. What is the difference between a poster and a flyer?
+Poster	Flyer
+Usually displayed on walls.	Usually distributed to people.
+Attracts attention from a distance.	Provides promotional details.
+Often larger in size.	Usually smaller in size.
+
+Q53. What are the main elements of a poster?
+
+Heading, images, colours, event details, date, time, venue and contact information.
+
+Q54. What is the purpose of a poster?
+
+To attract attention and communicate information effectively.
+
+Q55. What are common poster sizes?
+
+A4, A3 and A2.
+
+Q56. What is a digital poster?
+
+A poster designed for digital platforms such as websites and social media.
+
+Q57. What is visual hierarchy?
+
+Visual hierarchy is arranging design elements according to their importance so users notice the most important information first.
+
+Q58. What is alignment?
+
+Alignment means arranging design elements properly to maintain a clean layout.
+
+Q59. Why should we use attractive fonts?
+
+To make the poster readable and visually appealing.
+
+Q60. How can we improve poster design?
+
+By using attractive colours, clear headings, readable fonts, relevant images and proper spacing.
+
+Q61. Where can we display a poster mockup?
+
+On college walls, notice boards, display stands, billboards and digital screens.
+
+Practical 6: Recipe Finder Application Using Figma
+Q62. What is a Recipe Finder Application?
+
+A Recipe Finder Application helps users find recipes based on ingredients, categories and dietary preferences.
+
+Q63. What is the purpose of a Recipe Finder App?
+
+To help users discover recipes and prepare food easily.
+
+Q64. What are the main features of a Recipe Finder App?
+- Recipe search
+- Food categories
+- Dietary filters
+- Recipe details
+- Cooking instructions
+- Favourite recipes
+Q65. What is ingredient-based searching?
+
+It allows users to find recipes using the ingredients available to them.
+
+Q66. What are dietary restrictions?
+
+Dietary restrictions are food limitations such as vegetarian, vegan, gluten-free and dairy-free diets.
+
+Q67. What is a search filter?
+
+A search filter helps users find results according to selected conditions.
+
+Q68. What are recipe details?
+
+Recipe details include ingredients, cooking time, difficulty level, serving size and recipe information.
+
+Q69. What are cooking instructions?
+
+Cooking instructions are step-by-step directions explaining how to prepare a dish.
+
+Q70. What is the favourite feature?
+
+It allows users to save recipes for future use.
+
+Q71. What is a bottom navigation bar?
+
+It is a menu displayed at the bottom of a screen to navigate between different sections.
+
+Q72. Why do we use food images in a Recipe Finder App?
+
+To make recipes attractive and help users understand the dishes.
+
+Q73. How can we improve a Recipe Finder App?
+
+By adding ingredient search, dietary filters, cooking timers, ratings, food images and voice search.

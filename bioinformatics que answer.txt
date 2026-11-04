@@ -1,0 +1,518 @@
+Assignment 1 – DNA Sequence Analysis
+A. Important theory questions and answers
+Q1. Define DNA. Explain its structure and importance.
+Answer:
+
+DNA (Deoxyribonucleic Acid) is a genetic material that carries hereditary information in living organisms.
+
+Structure of DNA:
+1. DNA has a double-helix structure.
+2. It consists of two strands.
+3. It contains four nitrogenous bases: Adenine (A), Thymine (T), Guanine (G) and Cytosine (C).
+4. A pairs with T, and G pairs with C.
+Importance:
+- Stores genetic information.
+- Transfers hereditary information.
+- Controls protein synthesis.
+- Helps in growth and development.
+Q2. Define DNA Sequence Analysis.
+Answer:
+
+DNA Sequence Analysis is the process of studying the order of nucleotides (A, T, G and C) in a DNA sequence to identify genes, motifs, mutations and other important genetic information.
+Q3. What is GC content? Explain its importance.
+Answer:
+
+GC content is the percentage of Guanine (G) and Cytosine (C) bases present in a DNA sequence.
+
+Formula:
+\[
+GC\ Content=\frac{G+C}{Total\ Bases}\times100
+\]
+
+Importance:
+1. Helps study DNA stability.
+2. Helps compare DNA sequences.
+3. Helps in genome analysis.
+4. Provides information about genetic composition.
+Example:
+
+DNA sequence: ATGC
+
+G = 1, C = 1, Total = 4.
+\[
+GC=\frac{1+1}{4}\times100=50\%
+\]
+
+Q4. What is a DNA motif? Explain its importance.
+Answer:
+
+A DNA motif is a short, specific sequence of nucleotides that has biological importance.
+
+Importance:
+- Helps identify functional DNA regions.
+- Helps identify regulatory sequences.
+- Helps study gene expression.
+- Helps understand DNA functions.
+Example: ATG is a start codon.
+Q5. What are start and stop codons?
+Answer:
+
+Codons are groups of three nucleotides that represent amino acids or translation signals.
+
+Start codon:
+- ATG is the standard start codon in DNA.
+- It signals the beginning of protein translation.
+Stop codons:
+- TAA
+- TAG
+- TGA
+They signal the end of protein translation.
+Q6. What is an ORF?
+Answer:
+
+ORF stands for Open Reading Frame. It is a continuous sequence of DNA or RNA that begins with a start codon and ends with a stop codon in the same reading frame.
+
+It helps identify possible protein-coding regions.
+Q7. What is a reverse complement sequence?
+Answer:
+
+A reverse complement is a DNA sequence obtained by reversing the original sequence and replacing each base with its complementary base.
+
+Base pairing:
+- A ↔ T
+- G ↔ C
+Example:
+
+Original: ATGC
+
+Reverse: CGTA
+
+Reverse complement: GCAT
+
+Importance: It is useful in DNA sequencing, gene analysis and bioinformatics.
+Q8. Differentiate between DNA and RNA.
+DNA	RNA
+Deoxyribonucleic Acid	Ribonucleic Acid
+Usually double-stranded	Usually single-stranded
+Contains A, T, G, C	Contains A, U, G, C
+Contains deoxyribose sugar	Contains ribose sugar
+Stores genetic information	Helps in protein synthesis and other cellular functions
+
+B. Python code viva questions
+Q9. What is the use of input()?
+It accepts data from the user.
+Q10. What is the use of len()?
+It calculates the total number of characters in a sequence.
+Q11. What is the use of count()?
+It counts how many times a particular character occurs.
+
+Example:
+dna = "ATGCGC"print(dna.count("G"))
+
+
+
+Output: 2
+Q12. What is the use of find()?
+It returns the position of the first occurrence of a specified substring. If not found, it returns -1.
+Q13. What is the use of -1 in Python?
+In our practical, find() returns -1 when the required motif or codon is not found.
+Q14. What is a for loop?
+A for loop is used to repeat a block of code for each item in a sequence.
+Q15. What is an if condition?
+An if condition checks whether a given condition is true or false.
+Q16. What does dna[::-1] mean?
+It reverses the DNA sequence.
+Q17. What is .upper()?
+It converts lowercase letters into uppercase letters.
+C. Important practical result
+For our previously tested DNA sequence:
+ATGGCGATCGATCGATCGTAGCGCGCTAA
+
+
+Motif: GCG
+Operation	Result
+DNA length	30
+GC content	60.00%
+GCG positions	3, 21, 24
+ATG	Position 0
+TAA	Position 27
+TAG	Position 18
+TGA	Not found
+
+Positions are zero-based, meaning the first position is 0.
+
+Assignment 2 – RNA-Seq Data Analysis
+A. Important theory questions and answers
+Q1. What is RNA-Seq? Explain its importance in studying gene expression.
+Answer:
+
+RNA-Seq (RNA Sequencing) is a technique used to study and measure gene expression by sequencing RNA molecules.
+
+Importance:
+1. Identifies expressed genes.
+2. Measures gene expression levels.
+3. Compares gene expression between samples.
+4. Identifies different RNA molecules.
+5. Helps in disease research and drug discovery.
+Q2. What is gene expression? Explain how RNA-Seq is used to study gene expression.
+Answer:
+
+Gene expression is the process by which information stored in a gene is used to produce a functional product, such as RNA or protein.
+
+RNA-Seq workflow:
+1. Collect biological samples.
+2. Extract RNA.
+3. Convert RNA into complementary DNA (cDNA).
+4. Perform sequencing.
+5. Analyze sequencing data.
+6. Measure gene expression levels.
+Q3. What is Differential Gene Expression (DGE)? Explain its importance.
+Answer:
+
+Differential Gene Expression is the process of identifying differences in gene expression levels between two or more conditions.
+
+Importance:
+- Identifies upregulated genes.
+- Identifies downregulated genes.
+- Helps study diseases.
+- Helps understand biological changes.
+- Supports drug discovery.
+Q4. What is fold change? Explain how it is used to identify upregulated and downregulated genes.
+Answer:
+
+Fold Change measures the difference in gene expression between two conditions.
+
+Formula:
+\[
+Fold\ Change=\frac{Treated\ Expression}{Control\ Expression}
+\]
+
+Interpretation in our practical:
+- FC ≥ 2: Upregulated.
+- FC ≤ 0.5: Downregulated.
+- Between 0.5 and 2: No substantial change by the selected threshold.
+Example 1:
+
+Control = 50, Treated = 150.
+\[
+FC=\frac{150}{50}=3
+\]
+
+The gene is upregulated.
+
+Example 2:
+
+Control = 200, Treated = 100.
+\[
+FC=\frac{100}{200}=0.5
+\]
+
+The gene is downregulated.
+Q5. What are biological databases? Give examples and explain their role.
+Answer:
+
+Biological databases are organized collections of biological information such as DNA sequences, RNA sequences, proteins, genes and pathways.
+
+Examples:
+Database	Purpose
+NCBI	Biological and genetic information
+GenBank	DNA sequence information
+Ensembl	Genome information and gene annotations
+GEO	Gene expression datasets
+KEGG	Biological pathways
+
+Importance:
+1. Stores biological data.
+2. Helps identify genes.
+3. Provides gene annotations.
+4. Helps researchers analyze biological functions.
+B. Additional viva questions
+Q6. What is upregulation?
+Upregulation means an increase in gene expression. The gene produces more RNA compared with the control condition.
+
+Example: Control = 50, Treated = 120.
+
+Fold Change = 2.4, so it is upregulated according to our practical's threshold.
+Q7. What is downregulation?
+Downregulation means a decrease in gene expression. The gene produces less RNA compared with the control condition.
+
+Example: Control = 200, Treated = 100.
+
+Fold Change = 0.5, so it is downregulated.
+Q8. What is the difference between upregulated and downregulated genes?
+Upregulated	Downregulated
+Gene expression increases	Gene expression decreases
+More RNA is produced	Less RNA is produced
+Fold change is greater than 1	Fold change is less than 1
+
+Q9. What is functional annotation?
+Functional annotation is the process of identifying and describing the biological functions of genes or proteins.
+Q10. What is biological interpretation?
+Biological interpretation means understanding what the observed gene expression changes indicate about biological processes or conditions.
+Q11. What is control and treated sample?
+- Control sample: The reference or untreated condition.
+- Treated sample: The condition in which a treatment or experiment has been applied.
+Q12. What is the difference between RNA and RNA-Seq?
+RNA is a biological molecule involved in gene expression and protein synthesis. RNA-Seq is a sequencing technique used to analyze RNA molecules.
+C. Practical result
+Our sample dataset contained six genes.
+Gene	Fold Change	Result
+Gene1	2.40	Upregulated
+Gene2	0.75	No substantial change
+Gene3	2.50	Upregulated
+Gene4	0.93	No substantial change
+Gene5	3.00	Upregulated
+Gene6	0.50	Downregulated
+
+Final result:
+- 3 upregulated genes.
+- 1 downregulated gene.
+- 2 genes with no substantial change by the selected threshold.
+Important viva point: Fold-change thresholds alone do not establish statistical significance. Proper differential expression analysis also uses statistical tests and adjusted p-values, usually with biological replicates.
+
+Assignment 3 – Protein Structure Prediction
+A. Important theory questions and answers
+Q1. What is a protein? Explain its importance in living organisms.
+Answer:
+
+A protein is a biological molecule made up of amino acids joined together by peptide bonds.
+
+Importance:
+1. Helps in growth and tissue repair.
+2. Acts as enzymes to speed up chemical reactions.
+3. Transports substances in the body.
+4. Helps the immune system fight infections.
+5. Supports muscle movement.
+6. Provides structure to cells and tissues.
+Example: Haemoglobin carries oxygen in the blood.
+Q2. Define Protein Sequence Analysis.
+Answer:
+
+Protein Sequence Analysis is the process of studying the order of amino acids in a protein to identify its length, composition, molecular weight and possible biological functions.
+Q3. What is protein structure prediction? Explain why it is important.
+Answer:
+
+Protein Structure Prediction is the process of predicting the three-dimensional (3D) structure of a protein using its amino acid sequence.
+
+Importance:
+1. Helps understand protein functions.
+2. Helps identify protein interactions.
+3. Supports drug discovery.
+4. Helps study diseases.
+5. Reduces the need for some expensive laboratory experiments.
+Q4. What is homology modeling? Explain its basic working.
+Answer:
+
+Homology modeling is a technique used to predict the 3D structure of an unknown protein using the known structure of a similar protein as a template.
+
+Working:
+1. Enter the target protein sequence.
+2. Find a similar protein with a known structure.
+3. Align both protein sequences.
+4. Build a 3D model using the template.
+5. Evaluate the predicted structure.
+Q5. What is SWISS-MODEL? Explain how it is used for protein structure prediction.
+Answer:
+
+SWISS-MODEL is an online tool used to predict the 3D structure of proteins through homology modeling.
+
+Steps:
+1. Open the SWISS-MODEL website.
+2. Enter the protein sequence.
+3. Search for a suitable template.
+4. Select the template.
+5. Generate the 3D structure.
+6. Analyze the predicted model.
+Website: SWISS-MODEL
+Q6. Explain the relationship between protein sequence, structure and function.
+Answer:
+
+Protein sequence, structure and function are closely related.
+1. Sequence: The order of amino acids in a protein.
+2. Structure: The 3D shape formed by folding the amino acid sequence.
+3. Function: The biological activity performed by the protein.
+The amino acid sequence influences protein folding. The resulting structure helps determine its function.
+
+Remember:
+
+Sequence → Structure → Function.
+B. Additional viva questions
+Q7. How many standard amino acids are there?
+There are 20 standard amino acids.
+Q8. What are amino acids?
+Amino acids are the building blocks of proteins.
+Q9. What is a peptide bond?
+A peptide bond is a chemical bond that joins two amino acids.
+Q10. What are the 20 standard amino acid symbols?
+ACDEFGHIKLMNPQRSTVWY
+Q11. Which letters are not among the 20 standard amino acid symbols?
+- B: Asparagine or Aspartic acid (ambiguous).
+- J: Isoleucine or Leucine (ambiguous).
+- X: Unknown amino acid.
+- Z: Glutamine or Glutamic acid (ambiguous).
+O and U represent rare amino acids: Pyrrolysine and Selenocysteine.
+Q12. What is AlphaFold?
+AlphaFold is an AI-based system used to predict the 3D structures of proteins.
+Q13. What is PDB?
+PDB stands for Protein Data Bank. It stores experimentally determined 3D structures of proteins and other biological molecules.
+Q14. What are protein interactions?
+Protein interactions are connections between proteins or between proteins and other molecules that help perform biological functions.
+Q15. What is molecular weight?
+Molecular weight is the mass of a molecule, commonly expressed in Daltons (Da).
+Q16. What is the approximate weight of one amino acid?
+Approximately 110 Daltons per amino acid residue is used as a rough average.
+C. Python code viva questions
+Question	Answer
+What is len(protein)?	Calculates protein length.
+What is protein.count(aa)?	Counts occurrences of an amino acid.
+Why use a for loop?	To check all 20 amino acid symbols.
+Why use if count > 0?	Displays only amino acids present in the sequence.
+Why multiply by 110?	To estimate protein molecular weight.
+What is .upper()?	Converts sequence letters into uppercase.
+
+Important practical limitation: Your supplied Python program performs protein sequence analysis, but it does not actually predict a 3D structure. AlphaFold or SWISS-MODEL is needed for actual structure prediction.
+
+Assignment 5 – Machine Learning for Genomic Data
+A. Important theory questions and answers
+Q1. What is Machine Learning? Explain its applications in bioinformatics.
+Answer:
+
+Machine Learning is a branch of Artificial Intelligence that allows computers to learn patterns from data and make predictions without being explicitly programmed for every task.
+
+Applications in bioinformatics:
+1. Disease prediction.
+2. Gene classification.
+3. Protein structure prediction.
+4. Drug discovery.
+5. DNA sequence analysis.
+6. Gene expression analysis.
+Q2. What is genomic data? Explain how Machine Learning can be used to analyze it.
+Answer:
+
+Genomic data is biological information related to the DNA, genes and genetic characteristics of an organism.
+
+Machine Learning analysis:
+1. Collect genomic data.
+2. Extract important features.
+3. Prepare the dataset.
+4. Train the model.
+5. Test the model.
+6. Predict the class or outcome.
+Example: Classifying genomic samples as Healthy or Disease.
+Q3. What is classification? Explain classification using a genomic dataset.
+Answer:
+
+Classification is a supervised Machine Learning technique used to divide data into predefined categories or classes.
+
+In our practical:
+1. Collect genomic data.
+2. Select GeneFeature1 and GeneFeature2.
+3. Assign class labels such as Healthy and Disease.
+4. Train the model.
+5. Predict the class of new samples.
+Q4. What is Random Forest? Explain its basic working and advantages.
+Answer:
+
+Random Forest is a supervised Machine Learning algorithm used for classification and regression. It combines multiple decision trees to make a final prediction.
+
+Working:
+1. Select random samples from the training dataset.
+2. Build multiple decision trees.
+3. Each tree makes a prediction.
+4. Combine predictions using majority voting for classification.
+5. Select the class with the highest votes.
+Advantages:
+- Good prediction performance in many applications.
+- Reduces overfitting compared with a single decision tree in many situations.
+- Handles multiple features.
+- Can work with large datasets.
+- Provides feature importance information.
+Q5. Why is genomic data divided into training and testing data? Explain the importance of model accuracy.
+Answer:
+
+The dataset is divided into training and testing data to train the model and evaluate its performance on unseen data.
+
+Training data:
+- Used to teach the model.
+- Helps the model learn patterns.
+- In our practical, 70% of the data is used.
+Testing data:
+- Used to evaluate the model.
+- Checks prediction performance on unseen samples.
+- In our practical, 30% of the data is used.
+Accuracy:
+
+Accuracy measures the proportion of correct predictions.
+\[
+Accuracy=\frac{Correct\ Predictions}{Total\ Predictions}\times100
+\]
+
+Example: If 9 out of 10 predictions are correct, accuracy = 90%.
+B. Additional viva questions
+Q6. What is bioinformatics?
+Bioinformatics is the application of computer science, mathematics and computational methods to collect, store and analyze biological data.
+Q7. What is supervised learning?
+Supervised learning is a type of Machine Learning in which a model learns from labelled training data.
+Q8. What is a feature?
+A feature is an input variable used by a machine learning model to make predictions.
+Q9. What is a target variable?
+A target variable is the output that the model tries to predict.
+Q10. What is a decision tree?
+A decision tree is a machine learning model that makes decisions using conditions and branches.
+Q11. What is SVM?
+SVM stands for Support Vector Machine. It is a supervised machine learning algorithm used for classification and regression.
+Q12. What is train_test_split()?
+It divides a dataset into training and testing parts.
+Q13. What is test_size=0.3?
+It means 30% of the dataset is used for testing.
+Q14. What is random_state=1?
+It ensures reproducibility of the random splitting or model process.
+Q15. What is stratify=y?
+It maintains the proportion of different classes when splitting the dataset.
+Q16. What is n_estimators=100?
+It means the Random Forest uses 100 decision trees.
+Q17. What is model.fit()?
+It trains the machine learning model using training data.
+Q18. What is model.predict()?
+It predicts class labels for given input data.
+Q19. What is accuracy_score()?
+It calculates the proportion of correct predictions.
+Q20. What is feature importance?
+Feature importance indicates how useful an input feature is for making predictions in a trained model.
+C. Practical result
+Our dataset contained 10 samples:
+- 5 Healthy samples.
+- 5 Disease samples.
+- 2 input features.
+- 1 target column.
+The dataset was divided into 70% training and 30% testing data.
+
+The expected result for our sample dataset was 100% accuracy on the three testing samples. This small result does not establish real-world diagnostic performance.
+
+Important definitions from all practicals
+These definitions are especially useful for short viva questions.
+Term	Definition
+DNA Sequence Analysis	Studying the order of nucleotides in DNA.
+RNA Sequence Analysis	Studying RNA sequences and gene expression.
+Protein Sequence Analysis	Studying the order of amino acids in a protein.
+RNA-Seq	A technique used to study gene expression by sequencing RNA.
+Gene Expression	Process of using gene information to produce functional RNA or protein.
+DGE	Identifying differences in gene expression between conditions.
+Fold Change	Ratio of expression in treated and control samples.
+Upregulation	Increase in gene expression.
+Downregulation	Decrease in gene expression.
+Protein Structure Prediction	Predicting the 3D structure of a protein.
+Homology Modeling	Predicting a protein structure using a similar known structure as a template.
+Machine Learning	Teaching computers to learn patterns from data.
+Genomic Data	Biological information about DNA and genes.
+Classification	Dividing data into predefined categories.
+Random Forest	An algorithm that combines multiple decision trees.
+Accuracy	Proportion of correct predictions.
+
+
+Important formulas for practical exams
+Practical	Formula
+DNA GC Content	\((G+C)/Total\ Bases \times 100\)
+RNA-Seq Fold Change	\(Treated/Control\)
+Protein Approx. Molecular Weight	\(Length \times 110\) Da
+ML Accuracy	\(Correct/Total \times 100\)
