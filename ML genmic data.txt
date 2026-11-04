@@ -1,0 +1,545 @@
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# Read Dataset
+data = pd.read_csv("genomic_data.csv")
+
+print("Genomic Dataset\n")
+print(data)
+
+# Features
+X = data[["GeneFeature1", "GeneFeature2"]]
+
+# Target
+y = data["Class"]
+
+# Split Dataset
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=1, stratify=y
+)
+
+# Create Model
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=1
+)
+
+# Train Model
+model.fit(X_train, y_train)
+
+# Prediction
+prediction = model.predict(X_test)
+
+print("\nActual Class")
+print(y_test.values)
+
+print("\nPredicted Class")
+print(prediction)
+
+# Accuracy
+accuracy = accuracy_score(y_test, prediction)
+
+print("\nAccuracy:", round(accuracy * 100, 2), "%")
+
+
+
+#########
+5. Line-by-line code explanation
+Part 1: Import libraries
+import pandas as pd
+
+
+
+- import loads a library.
+- pandas is used to handle datasets.
+- pd is a short name (alias) for Pandas.
+from sklearn.model_selection import train_test_split
+
+
+
+- Imports train_test_split.
+- It divides the dataset into training and testing parts.
+from sklearn.ensemble import RandomForestClassifier
+
+
+
+- Imports the Random Forest classification algorithm.
+- It uses multiple decision trees to make a prediction.
+from sklearn.metrics import accuracy_score
+
+
+
+- Imports accuracy_score.
+- It calculates how many predictions are correct.
+Part 2: Read the dataset
+data = pd.read_csv("genomic_data.csv")
+
+
+
+- pd.read_csv() reads a CSV file.
+- "genomic_data.csv" is the dataset filename.
+- data stores the dataset.
+print("Genomic Dataset\n")print(data)
+
+
+
+- Displays the heading.
+- Prints all rows and columns of the dataset.
+- \n adds a new line.
+Part 3: Select features
+X = data[["GeneFeature1", "GeneFeature2"]]
+
+
+
+- X represents input features.
+- We select two columns from the dataset.
+- These features are used by the model to make predictions.
+Example:
+- GeneFeature1 = 2.5
+- GeneFeature2 = 3.0
+Part 4: Select target
+y = data["Class"]
+
+
+
+- y represents the target/output.
+- It contains the class labels.
+- In this practical, the labels are Healthy and Disease.
+Remember:
+- X = Input features.
+- y = Expected output or target.
+Part 5: Split the dataset
+X_train, X_test, y_train, y_test = train_test_split(    X, y, test_size=0.3, random_state=1, stratify=y)
+
+
+
+This is an important step.
+
+The dataset is divided into two parts:
+- Training data: Used to teach the model.
+- Testing data: Used to evaluate the model.
+Explanation of parameters:
+Parameter	Meaning
+X	Input features
+y	Target labels
+test_size=0.3	30% data used for testing
+random_state=1	Keeps the split reproducible
+stratify=y	Maintains class proportions in both sets
+
+For 10 rows:
+- Training data = 7 rows (70%).
+- Testing data = 3 rows (30%).
+Part 6: Create the model
+model = RandomForestClassifier(    n_estimators=100,    random_state=1)
+
+
+
+- RandomForestClassifier() creates a Random Forest model.
+- n_estimators=100 means the model uses 100 decision trees.
+- random_state=1 makes the random process reproducible.
+- model stores the created classifier.
+What is Random Forest?
+
+Random Forest is a machine learning algorithm that combines multiple decision trees to make a final prediction.
+
+
+
+
+
+
+
+saas.studentorg.berkeley.edu
+
+
+For example:
+- Tree 1 predicts Healthy.
+- Tree 2 predicts Healthy.
+- Tree 3 predicts Disease.
+The majority vote is Healthy.
+Part 7: Train the model
+model.fit(X_train, y_train)
+
+
+
+- .fit() trains the model.
+- It learns patterns from the training features and their labels.
+- After training, the model can predict the class of new data.
+Part 8: Make predictions
+prediction = model.predict(X_test)
+
+
+
+- .predict() predicts the class labels.
+- X_test contains the testing features.
+- prediction stores the predicted classes.
+Part 9: Display actual classes
+print("\nActual Class")print(y_test.values)
+
+
+
+- Displays the actual class labels from the testing dataset.
+- .values converts the Pandas Series into an array of values.
+Part 10: Display predicted classes
+print("\nPredicted Class")print(prediction)
+
+
+
+- Displays the classes predicted by the Random Forest model.
+- We compare these predictions with the actual classes.
+Part 11: Calculate accuracy
+accuracy = accuracy_score(y_test, prediction)
+
+
+
+- Compares actual and predicted labels.
+- Calculates the percentage of correct predictions as a proportion between 0 and 1.
+- Stores the result in accuracy.
+print("\nAccuracy:", round(accuracy * 100, 2), "%")
+
+
+
+- accuracy * 100 converts the result into a percentage.
+- round(..., 2) keeps two decimal places.
+- print() displays the final accuracy.
+Example:
+
+If accuracy = 0.90:
+\[
+0.90 \times 100 = 90\%
+\]
+
+6. Complete program execution flow
+1. Read genomic_data.csv
+
+2. Select input features (X) and target (y)
+
+3. Split into training and testing data
+
+4. Create Random Forest model
+
+5. Train the model using .fit()
+
+6. Predict classes using .predict()
+
+7. Calculate accuracy
+
+
+7. Expected output
+Your supplied dataset contains 10 samples.
+
+The program uses 7 samples for training and 3 samples for testing.
+Expected output for this dataset
+Actual Class
+['Disease' 'Healthy' 'Healthy']
+
+Predicted Class
+['Disease' 'Healthy' 'Healthy']
+
+Accuracy: 100.0 %
+
+
+The model correctly predicts all 3 testing samples.
+
+Accuracy calculation:
+\[
+Accuracy = \frac{Correct\ Predictions}{Total\ Predictions}\times100
+\]
+
+\[
+=\frac{3}{3}\times100=100\%
+\]
+
+Note: 100% accuracy here is only on a very small test dataset. It does not prove that the model will achieve 100% accuracy on real genomic data.
+8. Understanding your test cases
+Test case	GeneFeature1	GeneFeature2	Expected class
+1	3.0	3.2	Healthy
+2	1.0	0.9	Disease
+3	Test dataset	Test dataset	Predicted by model
+
+Important: Your current code evaluates the three automatically selected test samples. Test Case 1 and Test Case 2 are additional example inputs; the current code does not separately predict those two manually entered samples.
+9. Result
+The genomic dataset was successfully classified using the Random Forest machine learning algorithm. The model was trained using 70% of the dataset and tested using the remaining 30%. It predicted the Healthy and Disease classes and achieved 100% accuracy on this small test set.
+
+
+
+
+Part 4: Model Performance
+Q20. What is overfitting?
+
+Answer: Overfitting occurs when a model performs well on training data but poorly on testing data.
+
+Q21. What is underfitting?
+
+Answer: Underfitting occurs when a model fails to learn important patterns and performs poorly on both training and testing data.
+
+Q22. What is model evaluation?
+
+Answer: Model evaluation is the process of checking how well a machine learning model performs using testing data and performance metrics.
+
+Q23. What is Precision?
+
+Answer: Precision measures how many of the samples predicted as positive are actually positive.
+\[
+Precision=\frac{TP}{TP+FP}\times100
+\]
+
+Q24. What is Recall?
+
+Answer: Recall measures how many actual positive samples are correctly identified by the model.
+\[
+Recall=\frac{TP}{TP+FN}\times100
+\]
+
+Q25. What is F1-score?
+
+Answer: F1-score is the harmonic mean of Precision and Recall. It helps evaluate the balance between them.
+\[
+F1=2\times\frac{Precision\times Recall}{Precision+Recall}
+\]
+
+Q26. What is a Confusion Matrix?
+
+Answer: A Confusion Matrix is a table used to compare actual and predicted values of a classification model.
+
+It contains four terms:
+Term	Meaning
+TP	True Positive
+TN	True Negative
+FP	False Positive
+FN	False Negative
+
+Q27. Explain TP, TN, FP and FN.
+
+Answer:
+- TP (True Positive): Actual positive and predicted positive.
+- TN (True Negative): Actual negative and predicted negative.
+- FP (False Positive): Actual negative but predicted positive.
+- FN (False Negative): Actual positive but predicted negative.
+Part 5: Data Analysis and Python
+Q28. What is feature selection?
+
+Answer: Feature selection is the process of selecting important features from a dataset and removing unnecessary features.
+
+Q29. What is Pandas in Python?
+
+Answer: Pandas is a Python library used for data manipulation and analysis. It helps organize and analyze data in table format.
+
+Q30. What is pd.DataFrame()?
+
+Answer: pd.DataFrame() is used to convert data into a two-dimensional table with rows and columns.
+df = pd.DataFrame(data)
+
+
+
+Q31. What is the role of machine learning in genomic data analysis?
+
+Answer: Machine learning helps identify patterns in genomic data and classify or predict outcomes, such as disease categories.
+
+Important Python functions – Quick Revision
+Function	Use
+pd.DataFrame()	Creates a data table
+train_test_split()	Splits training and testing data
+DecisionTreeClassifier()	Creates a Decision Tree model
+fit()	Trains the model
+predict()	Predicts the output
+accuracy_score()	Calculates accuracy
+print()	Displays output
+
+
+
+
+10. Viva questions and answers
+Q1. What is genomic data?
+
+Genomic data is information about the DNA, genes and genetic characteristics of an organism.
+
+Q2. What is Machine Learning?
+
+Machine Learning is a branch of Artificial Intelligence that allows computers to learn patterns from data and make predictions.
+
+Q3. What is classification?
+
+Classification is a machine learning task that assigns data into predefined categories or classes.
+
+Q4. What is Random Forest?
+
+Random Forest is a supervised machine learning algorithm that combines multiple decision trees to make predictions.
+
+Q5. What is a decision tree?
+
+A decision tree is a machine learning model that makes decisions using conditions and branches.
+
+Q6. What is training data?
+
+Training data is the data used to teach the machine learning model.
+
+Q7. What is testing data?
+
+Testing data is used to evaluate the performance of a trained model.
+
+Q8. What is a feature?
+
+A feature is an input variable used by a machine learning model to make predictions.
+
+Q9. What is a target variable?
+
+A target variable is the output that the model tries to predict.
+
+Q10. What is accuracy?
+
+Accuracy measures the proportion of correct predictions made by a model.
+
+Q11. What is SVM?
+
+SVM stands for Support Vector Machine. It is a supervised machine learning algorithm used for classification and regression.
+
+Q12. What is n_estimators=100?
+
+It means the Random Forest model uses 100 decision trees.
+
+Q13. What is model.fit()?
+
+It trains the machine learning model using training data.
+
+Q14. What is model.predict()?
+
+It predicts the class labels for the given input data.
+
+Q15. What is stratify=y?
+
+It maintains the proportion of different classes when splitting the dataset.
+11. How to explain this practical to the examiner
+You can speak:
+
+"In this practical, we apply Machine Learning to genomic data using the Random Forest algorithm. First, we create a CSV dataset containing two gene features and their class labels, Healthy and Disease. Then, we import Pandas and Scikit-learn libraries and read the dataset. We separate the input features and target variable. After that, we divide the dataset into 70% training data and 30% testing data. We train the Random Forest model using the fit function, predict the classes using the predict function and finally calculate accuracy using accuracy_score."
+
+
+
+
+
+Q1. What is Machine Learning? Explain its applications in bioinformatics.
+Answer:
+
+Machine Learning (ML) is a branch of Artificial Intelligence (AI) that allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every task.
+
+Applications of Machine Learning in Bioinformatics:
+1. Disease Prediction: Helps predict diseases using genetic information.
+2. Gene Classification: Classifies genes based on their functions.
+3. Protein Structure Prediction: Helps predict the 3D structure of proteins.
+4. Drug Discovery: Helps identify potential drug candidates.
+5. DNA Sequence Analysis: Identifies patterns and mutations in DNA sequences.
+6. Gene Expression Analysis: Studies changes in gene activity.
+Example: Machine Learning can analyze genomic data to classify samples as Healthy or Disease.
+Q2. What is genomic data? Explain how Machine Learning can be used to analyze it.
+Answer:
+
+Genomic data is biological information related to the DNA, genes and genetic characteristics of an organism.
+
+It contains information about gene sequences, genetic variations and gene expression.
+
+How Machine Learning analyzes genomic data:
+1. Collect genomic data from biological samples.
+2. Extract important features from the data.
+3. Clean and prepare the dataset.
+4. Train a Machine Learning model.
+5. Test the model using testing data.
+6. Predict or classify the genomic information.
+Applications:
+- Disease prediction.
+- Identification of genetic mutations.
+- Gene classification.
+- Understanding genetic patterns.
+Example: A model analyzes gene features and predicts whether a sample belongs to the Healthy or Disease category.
+
+
+
+
+
+
+
+biorender.com
+
+
+Q3. What is classification? Explain classification using a genomic dataset.
+Answer:
+
+Classification is a supervised Machine Learning technique used to divide data into predefined categories or classes based on input features.
+
+Classification using a genomic dataset:
+1. Collect genomic data containing different gene features.
+2. Select input features such as GeneFeature1 and GeneFeature2.
+3. Assign class labels such as Healthy and Disease.
+4. Train the classification model using labelled data.
+5. Provide new genomic data to the trained model.
+6. The model predicts the appropriate class.
+Example:
+GeneFeature1	GeneFeature2	Class
+3.0	3.2	Healthy
+1.0	0.9	Disease
+2.8	2.9	Healthy
+0.9	1.1	Disease
+
+The model learns patterns from the dataset and predicts the class of new samples.
+Q4. What is Random Forest? Explain its basic working and advantages.
+Answer:
+
+Random Forest is a supervised Machine Learning algorithm used for classification and regression. It combines multiple decision trees to produce a final prediction.
+
+Basic working:
+1. Select random samples from the training dataset.
+2. Create multiple decision trees.
+3. Each decision tree makes its own prediction.
+4. Combine the predictions using majority voting for classification.
+5. The most commonly predicted class becomes the final output.
+
+
+
+
+
+
+
+virtual-labs.github.io
+
+
+Advantages of Random Forest:
+1. Provides good prediction performance.
+2. Reduces overfitting compared with a single decision tree in many situations.
+3. Handles large datasets.
+4. Works with multiple input features.
+5. Can identify important features.
+6. Can be used for both classification and regression.
+Example: In genomic data classification, Random Forest can predict whether a sample is Healthy or Disease.
+Q5. Why is genomic data divided into training and testing data? Explain the importance of model accuracy.
+Answer:
+
+Genomic data is divided into training and testing data to train the Machine Learning model and evaluate its performance on unseen data.
+
+1. Training Data:
+- Used to teach the model.
+- Helps the model learn patterns and relationships.
+- In our practical, 70% of the dataset is used for training.
+2. Testing Data:
+- Used to evaluate the trained model.
+- Checks how accurately the model predicts unseen samples.
+- In our practical, 30% of the dataset is used for testing.
+Importance of Model Accuracy:
+1. Measures the correctness of predictions.
+2. Helps evaluate model performance.
+3. Helps compare different models.
+4. Indicates how well the model classifies data.
+Accuracy formula:
+\[
+Accuracy = \frac{Correct\ Predictions}{Total\ Predictions}\times100
+\]
+
+Example:
+
+If a model correctly predicts 9 out of 10 samples:
+\[
+Accuracy = \frac{9}{10}\times100 = 90\%
+\]
+
+Therefore, the model accuracy is 90%.

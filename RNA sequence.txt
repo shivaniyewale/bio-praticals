@@ -1,0 +1,384 @@
+
+import pandas as pd
+
+# Read Dataset
+data = pd.read_csv("rna_seq.csv")
+
+print("RNA-Seq Dataset\n")
+print(data)
+
+# Calculate Fold Change
+data["Fold Change"] = data["Treated"] / data["Control"]
+
+status = []
+
+for fc in data["Fold Change"]:
+    if fc >= 2:
+        status.append("Upregulated")
+    elif fc <= 0.5:
+        status.append("Downregulated")
+    else:
+        status.append("No Significant Change")
+
+data["Status"] = status
+
+print("\nDifferential Gene Expression\n")
+print(data)
+
+
+#######
+6. Explanation of each line of code
+Step 1: Import Pandas
+import pandas as pd
+
+
+
+- import is used to include a library.
+- pandas is a Python library used for data analysis.
+- as pd gives it a short name.
+Step 2: Read the dataset
+data = pd.read_csv("rna_seq.csv")
+
+
+
+- read_csv() reads data from a CSV file.
+- "rna_seq.csv" is the dataset filename.
+- data stores the dataset in a DataFrame.
+Step 3: Display the dataset
+print("RNA-Seq Dataset\n")print(data)
+
+
+
+- First line displays the heading.
+- Second line displays the complete dataset.
+- \n adds a new line.
+Step 4: Calculate Fold Change
+data["Fold Change"] = data["Treated"] / data["Control"]
+
+
+
+- Calculates the ratio of Treated expression to Control expression.
+- Creates a new column called Fold Change.
+Formula:
+\[
+Fold\ Change = \frac{Treated}{Control}
+\]
+
+Example for Gene1:
+\[
+FC = \frac{120}{50} = 2.4
+\]
+
+Step 5: Create an empty list
+status = []
+
+
+
+Creates an empty list to store the expression status of each gene.
+Step 6: Check Fold Change
+for fc in data["Fold Change"]:
+
+
+
+- for loop checks each Fold Change value.
+- fc represents the current Fold Change.
+if fc >= 2:    status.append("Upregulated")
+
+
+
+If Fold Change is greater than or equal to 2, the gene is classified as Upregulated.
+elif fc <= 0.5:    status.append("Downregulated")
+
+
+
+If Fold Change is less than or equal to 0.5, the gene is classified as Downregulated.
+else:    status.append("No Significant Change")
+
+
+
+If neither condition is satisfied, the gene is classified as having No Significant Change.
+Step 7: Add status column
+data["Status"] = status
+
+
+
+Adds the calculated gene expression status to the dataset as a new column.
+Step 8: Display final result
+print("\nDifferential Gene Expression\n")print(data)
+
+
+
+Displays the final dataset containing:
+- Gene name
+- Control expression
+- Treated expression
+- Fold Change
+- Status
+
+7. Expected output
+Calculated output
+Gene	Control	Treated	Fold Change	Status
+Gene1	50	120	2.40	Upregulated
+Gene2	80	60	0.75	No Significant Change
+Gene3	100	250	2.50	Upregulated
+Gene4	150	140	0.93	No Significant Change
+Gene5	60	180	3.00	Upregulated
+Gene6	200	100	0.50	Downregulated
+
+Understanding the result
+- Upregulated: Gene expression increases in treated samples.
+- Downregulated: Gene expression decreases in treated samples.
+- No Significant Change: Fold Change falls between 0.5 and 2.
+Gene expression summary
+3
+Upregulated
+
+1
+Downregulated
+
+2
+No change
+
+
+
+8. Biological interpretation
+1. Gene1, Gene3 and Gene5 show increased expression after treatment.
+2. Gene6 shows decreased expression.
+3. Gene2 and Gene4 show moderate changes.
+4. Treatment may affect the expression of different genes.
+Note: The dataset contains generic gene names, so their specific biological functions cannot be identified. Also, statistical significance cannot be established without replicate data and statistical testing.
+9. Practical report
+Result:
+
+RNA-Seq data analysis was successfully performed using Python and Pandas. Fold Change was calculated for six genes. Three genes were upregulated, one gene was downregulated and two genes showed no significant change according to the selected fold-change thresholds.
+
+Conclusion:
+
+Thus, differential gene expression analysis was successfully performed using Python to compare Control and Treated gene expression levels.
+10. Short-answer viva questions
+Q1. What is RNA-Seq?
+
+RNA-Seq is a technique used to study and measure gene expression using RNA sequencing.
+
+Q2. What is gene expression?
+
+Gene expression is the process by which information from a gene is used to produce functional products.
+
+Q3. What is differential gene expression?
+
+It is the difference in gene expression levels between two or more conditions.
+
+Q4. What is Fold Change?
+
+It is the ratio of gene expression in the treated sample to the control sample.
+
+Q5. What is upregulation?
+
+An increase in gene expression.
+
+Q6. What is downregulation?
+
+A decrease in gene expression.
+
+Q7. What is Pandas?
+
+Pandas is a Python library used for data manipulation and analysis.
+
+Q8. What is a CSV file?
+
+CSV stands for Comma-Separated Values. It stores tabular data in text format.
+
+Q9. What is a DataFrame?
+
+A DataFrame is a two-dimensional tabular data structure in Pandas.
+
+Q10. What does read_csv() do?
+
+It reads data from a CSV file.
+
+11. How to explain this practical to the examiner
+You can say:
+
+"In this practical, we perform RNA-Seq data analysis using Python. First, we create a CSV dataset containing gene expression values for Control and Treated samples. Then, we import the Pandas library and read the dataset. We calculate Fold Change for each gene and classify genes as upregulated, downregulated or showing no significant change. Finally, we display the differential gene expression results."
+
+ 1. What is RNA-Seq? Explain its importance in studying gene expression.
+RNA-Seq (RNA Sequencing) is a technique used to study and measure gene expression by sequencing RNA molecules.
+
+Importance:
+1. Identifies expressed genes.
+2. Measures gene expression levels.
+3. Helps compare different biological conditions.
+4. Identifies new RNA transcripts.
+5. Useful in disease research and drug development.
+2. What is gene expression? Explain how RNA-Seq can be used to study gene expression.
+Gene expression is the process by which information from a gene is used to produce functional products such as proteins or RNA.
+
+RNA-Seq process:
+1. RNA is collected from cells or tissues.
+2. RNA is converted into cDNA.
+3. cDNA is sequenced.
+4. Sequencing data is analyzed.
+5. Gene expression levels are measured.
+Thus, RNA-Seq helps identify which genes are active and how strongly they are expressed.
+3. What is Differential Gene Expression (DGE)? Explain its importance.
+Differential Gene Expression (DGE) is the process of identifying differences in gene expression between two or more conditions, such as Control and Treated samples.
+
+Importance:
+1. Identifies upregulated and downregulated genes.
+2. Helps understand biological changes.
+3. Useful in disease research.
+4. Helps identify potential drug targets.
+5. Provides information about gene functions.
+4. What is fold change? Explain how it is used to identify upregulated and downregulated genes.
+Fold Change (FC) is the ratio of gene expression in the treated sample to the control sample.
+
+Formula:
+\[
+FC = \frac{Treated\ Expression}{Control\ Expression}
+\]
+
+Classification:
+- FC ≥ 2: Upregulated gene.
+- FC ≤ 0.5: Downregulated gene.
+- 0.5 less than FC less than 2: No significant change according to the given threshold.
+Example:
+
+If Control = 50 and Treated = 100:
+\[
+FC = \frac{100}{50}=2
+\]
+
+Therefore, the gene is upregulated.
+5. Explain the importance of NCBI and other biological databases in RNA-Seq analysis.
+Biological databases store and provide biological information such as DNA, RNA, protein sequences and gene annotations.
+
+Important databases:
+1. NCBI: Provides genetic and biological information.
+2. GenBank: Stores DNA sequences.
+3. Ensembl: Provides genome and gene information.
+4. GEO: Stores gene expression datasets.
+5. KEGG: Provides information about biological pathways.
+Importance:
+- Helps identify genes.
+- Provides functional annotations.
+- Supports gene expression analysis.
+- Helps understand biological pathways.
+- Useful in disease and genomic research.
+
+Assignment 2 – Completed
+These answers are suitable for short-answer questions and practical viva preparation.
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    
+
+
+
+
+
+
+what is upregulated and downregulated
+
+
+
+
+
+
+
+
+
+
+
+
+
+In simple words:
+1. Upregulated gene
+Upregulated means the gene produces more RNA (shows increased gene expression) in the treated sample compared to the control sample.
+
+Example:
+- Control = 50
+- Treated = 120
+\[
+FC = \frac{120}{50}=2.4
+\]
+
+Since FC ≥ 2, the gene is Upregulated.
+2. Downregulated gene
+Downregulated means the gene produces less RNA (shows decreased gene expression) in the treated sample compared to the control sample.
+
+Example:
+- Control = 200
+- Treated = 100
+\[
+FC = \frac{100}{200}=0.5
+\]
+
+Since FC ≤ 0.5, the gene is Downregulated.
+3. Difference between them
+Upregulated	Downregulated
+Gene expression increases.	Gene expression decreases.
+More RNA is produced.	Less RNA is produced.
+Fold Change ≥ 2 (our practical).	Fold Change ≤ 0.5 (our practical).
+
+Easy trick to remember:
+- Up = Expression goes UP ⬆️
+- Down = Expression goes DOWN ⬇️
+Viva answer: Upregulation is an increase in gene expression, whereas downregulation is a decrease in gene expression.
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    
+
+real time example
+
+
+
+Let's understand with a real-life example. 😊
+Example: Medicine effect on a patient
+Suppose a patient has an infection and is given medicine.
+
+Our body has genes that help fight infections.
+
+
+1. Upregulated gene ⬆️
+
+After taking medicine, a gene responsible for immune response becomes more active.
+
+Example: Gene expression increases from 50 to 150.
+
+Fold Change = 150 / 50 = 3
+
+More gene expression = Upregulated.
+
+
+
+
+2. Downregulated gene ⬇️
+
+After treatment, a gene responsible for inflammation becomes less active.
+
+Example: Gene expression decreases from 200 to 100.
+
+Fold Change = 100 / 200 = 0.5
+
+Less gene expression = Downregulated.

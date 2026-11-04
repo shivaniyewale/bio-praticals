@@ -1,0 +1,357 @@
+######swiss model
+# Protein Sequence Analysis
+
+protein = input("Enter Protein Sequence: ").upper()
+
+print("\nProtein Length:", len(protein))
+
+# Amino Acid Count
+print("\nAmino Acid Count\n")
+
+amino = "ACDEFGHIKLMNPQRSTVWY"
+
+for aa in amino:
+    count = protein.count(aa)
+
+    if count > 0:
+        print(aa, ":", count)
+
+# Approximate Molecular Weight
+weight = len(protein) * 110
+
+print("\nApproximate Molecular Weight:",
+      weight, "Daltons")
+
+
+
+
+
+##############
+Line-by-line explanation
+1. Comment
+# Protein Sequence Analysis
+
+
+
+- # is used to write a comment.
+- Python ignores comments during execution.
+- It tells us that this program performs protein sequence analysis.
+2. Accept protein sequence
+protein = input("Enter Protein Sequence: ").upper()
+
+
+
+There are three parts:
+- input() – accepts a sequence from the user.
+- protein – stores the entered sequence in a variable.
+- .upper() – converts all lowercase letters into uppercase.
+Example:
+
+Input:
+mvlspad
+
+
+Stored value:
+MVLSPAD
+
+
+3. Calculate protein length
+print("\nProtein Length:", len(protein))
+
+
+
+- print() – displays the output.
+- \n – moves the output to a new line.
+- len(protein) – calculates the total number of characters (amino acids) in the sequence.
+Example:
+MVLSPAD
+
+
+Length = 7.
+
+4. Display heading
+# Amino Acid Countprint("\nAmino Acid Count\n")
+
+
+
+- First line is a comment.
+- print() displays the heading.
+- \n adds blank lines to make the output readable.
+5. Store all 20 amino acids
+amino = "ACDEFGHIKLMNPQRSTVWY"
+
+
+
+- amino is a variable.
+- It stores the symbols of 20 standard amino acids.
+- Each letter represents one amino acid.
+For example:
+- A = Alanine
+- G = Glycine
+- K = Lysine
+- M = Methionine
+- W = Tryptophan
+6. For loop
+for aa in amino:
+
+
+
+- for is used for looping.
+- aa is a loop variable.
+- amino contains 20 amino acid symbols.
+The loop checks each letter one by one.
+
+For example:
+Loop	aa
+1	A
+2	C
+3	D
+4	E
+5	F
+...	...
+20	Y
+
+7. Count amino acids
+count = protein.count(aa)
+
+
+
+- count stores the number of occurrences.
+- .count() counts how many times a particular letter appears in the protein sequence.
+- aa represents the current amino acid being checked.
+Example:
+
+Protein:
+MVLSPAD
+
+
+When aa = A, Python checks how many times A appears.
+
+Result:
+count = 1
+
+
+When aa = M:
+count = 1
+
+
+8. If condition
+if count > 0:
+
+
+
+- if checks a condition.
+- count > 0 means the amino acid occurs at least once.
+- If the condition is true, the next statement executes.
+- If false, Python skips the statement.
+Example:
+
+If count = 2, condition is true.
+
+If count = 0, condition is false.
+
+9. Display amino acid count
+print(aa, ":", count)
+
+
+
+Displays the amino acid and its count.
+
+Example:
+A : 1
+D : 1
+M : 1
+
+
+10. Calculate approximate molecular weight
+weight = len(protein) * 110
+
+
+
+- len(protein) calculates the total amino acids.
+- 110 is the average approximate molecular weight of one amino acid residue in a protein.
+- * performs multiplication.
+- weight stores the calculated result.
+Example:
+
+If protein length = 31:
+\[
+31 \times 110 = 3410
+\]
+
+Weight = 3410 Daltons.
+
+11. Display molecular weight
+print("\nApproximate Molecular Weight:",      weight, "Daltons")
+
+
+
+- print() displays the result.
+- weight displays the calculated molecular weight.
+- Daltons represents the unit of molecular mass.
+- The two lines inside print() are automatically treated as one function call because the opening parenthesis has not been closed.
+Complete execution flow
+Enter Protein Sequence
+
+Calculate Protein Length
+
+Count Each Amino Acid
+
+Calculate Molecular Weight
+
+Display Final Output
+
+
+Important viva questions about the code
+Question	Answer
+Why use .upper()?	To convert lowercase into uppercase.
+What does len() do?	Calculates sequence length.
+What does .count() do?	Counts occurrences of a character.
+Why use a for loop?	To check all 20 amino acids one by one.
+Why use if count > 0?	To display only amino acids present in the sequence.
+Why multiply by 110?	To estimate molecular weight.
+What is Daltons?	A unit used to measure molecular mass.
+
+
+
+2. Why are other letters missing?
+Some letters have special meanings in protein sequence notation.
+Letter	Meaning
+B	Aspartic acid or Asparagine (ambiguous)
+J	Isoleucine or Leucine (ambiguous)
+O	Pyrrolysine (rare, non-standard)
+U	Selenocysteine (rare, non-standard)
+X	Unknown or unidentified amino acid
+Z	Glutamic acid or Glutamine (ambiguous)
+
+
+
+Q1. What is a protein? Explain the importance of proteins in living organisms.
+Answer:
+
+A protein is a biological molecule made up of amino acids joined together by peptide bonds. Proteins are essential for the growth, repair and proper functioning of living organisms.
+
+Importance of proteins:
+1. Growth and repair: Help in building and repairing body tissues.
+2. Enzymes: Speed up chemical reactions in the body.
+3. Transportation: Carry substances like oxygen in the blood.
+4. Immunity: Antibodies help protect the body from infections.
+5. Movement: Proteins like actin and myosin help in muscle movement.
+6. Structure: Provide support to cells and tissues.
+Example: Haemoglobin is a protein that carries oxygen in the blood.
+
+
+
+
+
+
+
+biorender.com
+
+
+Q2. What is protein structure prediction? Explain why it is important.
+Answer:
+
+Protein structure prediction is the process of predicting the three-dimensional (3D) structure of a protein using its amino acid sequence.
+
+Importance:
+1. Helps understand protein functions.
+2. Helps identify protein interactions.
+3. Supports drug discovery and development.
+4. Helps study diseases caused by protein abnormalities.
+5. Reduces the need for expensive laboratory experiments.
+Example: AlphaFold predicts the 3D structure of a protein using artificial intelligence.
+
+
+
+
+
+
+
+wired.it
+
+
+Q3. What is homology modeling? Explain its basic working.
+Answer:
+
+Homology modeling is a technique used to predict the 3D structure of an unknown protein using the known structure of a similar protein as a template.
+
+Basic working:
+1. Input sequence: Provide the amino acid sequence of the target protein.
+2. Template identification: Find a similar protein with a known 3D structure.
+3. Sequence alignment: Compare the target sequence with the template sequence.
+4. Model building: Construct a 3D model using the template structure.
+5. Model evaluation: Check the quality and accuracy of the predicted structure.
+Example: If two proteins have similar amino acid sequences, the known structure of one can help predict the structure of the other.
+
+
+
+
+
+
+
+academia.edu
+
+
+Q4. What is SWISS-MODEL? Explain how it is used for protein structure prediction.
+Answer:
+
+SWISS-MODEL is an online web-based tool used for predicting the 3D structure of proteins through homology modeling.
+
+Steps to use SWISS-MODEL:
+1. Open the SWISS-MODEL website.
+2. Enter or paste the protein amino acid sequence.
+3. Search for a suitable template protein.
+4. Select an appropriate template.
+5. Generate the 3D protein structure.
+6. View and analyze the predicted structure and its quality.
+Uses:
+- Predicts protein structures.
+- Helps understand protein functions.
+- Supports biological research.
+- Helps study protein interactions.
+Website: SWISS-MODEL
+
+
+
+
+
+
+
+biologicalmodeling.org
+
+
+Q5. Explain the relationship between protein sequence, structure, and function.
+Answer:
+
+Protein sequence, structure and function are closely related.
+1. Sequence: The order of amino acids in a protein.
+2. Structure: The three-dimensional shape formed by folding the amino acid sequence.
+3. Function: The biological activity performed by the protein.
+Relationship:
+- The amino acid sequence determines how a protein folds.
+- The folding creates a specific 3D structure.
+- The 3D structure helps determine the protein's function.
+- Changes in the sequence can affect its structure and function.
+Example: Haemoglobin has a specific 3D structure that allows it to bind and transport oxygen in the blood.
+
+
+
+
+
+
+
+apscore5.com
+
+
+Quick revision for viva
+Question	Short answer
+What are proteins made of?	Amino acids.
+How many standard amino acids?	20.
+What is protein structure prediction?	Predicting the 3D shape of a protein.
+What is homology modeling?	Predicting structure using a similar known protein.
+What is SWISS-MODEL?	An online homology modeling tool.
+What is AlphaFold?	An AI-based protein structure prediction system.
+What is PDB?	Protein Data Bank.
+What determines protein function?	Its amino acid sequence and 3D structure.
+What is a peptide bond?	A bond joining two amino acids.

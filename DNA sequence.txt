@@ -1,0 +1,318 @@
+
+# DNA Sequence Analysis
+
+dna = input("Enter DNA Sequence: ").upper()
+
+# Length
+print("\nSequence Length:", len(dna))
+
+# GC Content
+g = dna.count("G")
+c = dna.count("C")
+
+gc = ((g + c) / len(dna)) * 100
+
+print("GC Content:", round(gc, 2), "%")
+
+# Motif Search
+motif = input("Enter Motif: ").upper()
+
+positions = []
+
+for i in range(len(dna) - len(motif) + 1):
+    if dna[i:i + len(motif)] == motif:
+        positions.append(i)
+
+print("Motif Found At:", positions)
+
+# Start Codon
+start = dna.find("ATG")
+
+if start != -1:
+    print("Start Codon Found At:", start)
+else:
+    print("Start Codon Not Found")
+
+# Stop Codons
+stop_codons = ["TAA", "TAG", "TGA"]
+
+for stop in stop_codons:
+    pos = dna.find(stop)
+
+    if pos != -1:
+        print(stop, "Found At:", pos)
+    else:
+        print(stop, "Not Found")
+
+# Reverse Complement
+reverse = dna[::-1]
+
+complement = ""
+
+for base in reverse:
+    if base == "A":
+        complement += "T"
+    elif base == "T":
+        complement += "A"
+    elif base == "G":
+        complement += "C"
+    elif base == "C":
+        complement += "G"
+
+print("Reverse Complement:", complement)
+
+
+
+
+#########explaination
+
+2. Explanation of each line of code
+Step 1: Input DNA sequence
+dna = input("Enter DNA Sequence: ").upper()
+
+
+
+- input() takes the DNA sequence from the user.
+- dna stores the entered sequence.
+- .upper() converts all lowercase letters into uppercase.
+Example:
+
+Input: atggcgatc
+
+Output stored: ATGGCGATC
+Step 2: Calculate sequence length
+print("\nSequence Length:", len(dna))
+
+
+
+- print() displays the result.
+- \n moves the output to a new line.
+- len(dna) calculates the total number of characters in the DNA sequence.
+Example: ATGC
+
+Length = 4
+Step 3: Calculate GC content
+g = dna.count("G")c = dna.count("C")
+
+
+
+- count("G") counts the number of G bases.
+- count("C") counts the number of C bases.
+- Both values are stored in separate variables.
+gc = ((g + c) / len(dna)) * 100
+
+
+
+This is the formula for calculating GC content.
+\[
+GC\ Content = \frac{G+C}{Total\ Length}\times100
+\]
+
+print("GC Content:", round(gc, 2), "%")
+
+
+
+- round(gc, 2) rounds the result to two decimal places.
+- % displays the percentage symbol.
+Step 4: Motif search
+motif = input("Enter Motif: ").upper()
+
+
+
+- Takes a specific DNA pattern from the user.
+- Converts it into uppercase.
+Example: GCG
+positions = []
+
+
+
+Creates an empty list to store the positions where the motif is found.
+for i in range(len(dna) - len(motif) + 1):
+
+
+
+- for loop checks the DNA sequence.
+- i represents the current position.
+- The loop checks every possible starting position for the motif.
+if dna[i:i + len(motif)] == motif:
+
+
+
+- dna[i:i + len(motif)] extracts a substring.
+- It compares the extracted substring with the given motif.
+- If both are equal, the motif is found.
+positions.append(i)
+
+
+
+Adds the matching position to the list.
+print("Motif Found At:", positions)
+
+
+
+Displays all matching positions.
+Step 5: Find start codon
+start = dna.find("ATG")
+
+
+
+- find() searches for the given pattern.
+- Here, it searches for ATG.
+- It returns the first occurrence position.
+- If not found, it returns -1.
+if start != -1:    print("Start Codon Found At:", start)else:    print("Start Codon Not Found")
+
+
+
+- != means not equal to.
+- If the result is not -1, the start codon is found.
+- Otherwise, it displays not found.
+Step 6: Find stop codons
+stop_codons = ["TAA", "TAG", "TGA"]
+
+
+
+Creates a list containing three stop codons.
+for stop in stop_codons:
+
+
+
+The loop checks each stop codon one by one.
+pos = dna.find(stop)
+
+
+
+Searches for the current stop codon in the DNA sequence.
+if pos != -1:    print(stop, "Found At:", pos)else:    print(stop, "Not Found")
+
+
+
+Displays whether each stop codon is present and its first position.
+Step 7: Reverse complement
+reverse = dna[::-1]
+
+
+
+- [::-1] reverses the DNA sequence.
+- It starts reading from the last character to the first.
+Example:
+
+Original: ATGC
+
+Reversed: CGTA
+complement = ""
+
+
+
+Creates an empty string to store the reverse complement.
+for base in reverse:
+
+
+
+Checks each nucleotide in the reversed sequence.
+if base == "A":    complement += "T"elif base == "T":    complement += "A"elif base == "G":    complement += "C"elif base == "C":    complement += "G"
+
+
+
+This replaces each nucleotide with its complementary base.
+Original base	Complement
+A	T
+T	A
+G	C
+C	G
+
+print("Reverse Complement:", complement)
+
+
+
+Displays the final reverse complement sequence.
+
+3. Test Case 1 – Calculation
+Given input:
+DNA Sequence: ATGGCGATCGATCGATCGTAGCGCGCTAA
+Motif: GCG
+
+Short Answer Questions – DNA Sequence Analysis
+1. What is DNA? Explain the structure and functions of DNA.
+DNA (Deoxyribonucleic Acid) is the genetic material that carries hereditary information in living organisms.
+
+Structure:
+- DNA has a double helix structure.
+- It consists of two strands.
+- It contains four nitrogenous bases: Adenine (A), Thymine (T), Guanine (G) and Cytosine (C).
+- A pairs with T, and G pairs with C.
+Functions:
+1. Stores genetic information.
+2. Transfers hereditary information.
+3. Controls protein synthesis.
+4. Helps in growth and development.
+2. What is GC content? Explain how GC content is calculated and why it is important.
+GC content is the percentage of Guanine (G) and Cytosine (C) bases present in a DNA sequence.
+
+Formula:
+\[
+GC\ Content = \frac{G+C}{Total\ Bases}\times100
+\]
+
+Importance:
+1. Helps study DNA stability.
+2. Helps compare different DNA sequences.
+3. Useful in identifying organisms.
+4. Helps in genome analysis.
+3. What is a DNA motif? Explain the importance of finding motifs in a DNA sequence.
+A DNA motif is a short, specific pattern of nucleotides that has biological importance.
+
+Example: ATG, GCG.
+
+Importance:
+1. Helps identify functional regions of DNA.
+2. Helps identify gene regulatory sequences.
+3. Helps study gene expression.
+4. Useful in biological sequence analysis.
+4. What are start and stop codons? Explain their role in identifying coding regions.
+Start codon: ATG is the standard start codon that indicates the beginning of protein translation.
+
+Stop codons: TAA, TAG and TGA indicate the end of protein translation.
+
+Role:
+1. Start codon identifies the beginning of a coding region.
+2. Stop codon identifies its end.
+3. They help identify Open Reading Frames (ORFs).
+4. They help in gene and protein analysis.
+5. What is a reverse complement of DNA? Explain how it is generated.
+A reverse complement is a DNA sequence obtained by reversing the original sequence and replacing each base with its complementary base.
+
+Base pairing:
+Original	Complement
+A	T
+T	A
+G	C
+C	G
+
+Example:
+- Original DNA: ATGC
+- Reverse: CGTA
+- Reverse Complement: GCAT
+Importance:
+1. Helps analyze DNA sequences.
+2. Useful in gene identification.
+3. Used in DNA sequencing and bioinformatics.
+
+4. Important viva questions
+Question	Answer
+What is DNA?	Deoxyribonucleic Acid.
+What is GC content?	Percentage of G and C bases.
+What is a motif?	A specific pattern of nucleotides.
+What is len()?	Function used to calculate length.
+What is count()?	Counts occurrences of a character.
+What is find()?	Finds the first occurrence of a substring.
+What does -1 mean in find()?	Substring not found.
+What is append()?	Adds an element to a list.
+What is a start codon?	ATG.
+Name stop codons.	TAA, TAG and TGA.
+What is reverse complement?	Reversing DNA and replacing bases with complementary bases.
+
+5. How to explain the practical to the examiner
+You can say:
+
+"This practical is based on DNA sequence analysis using Python. First, we accept a DNA sequence from the user. Then we calculate its length and GC content. After that, we search for a specific motif and identify start and stop codons. Finally, we generate the reverse complement of the DNA sequence. This practical helps us understand basic DNA sequence manipulation using Python."
